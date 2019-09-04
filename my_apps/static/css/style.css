@@ -1,0 +1,50 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.headersection{
+  background: #133861;
+}
+.navbar-brand{
+	color:#fff !important;
+	margin-right:50px;
+	padding-right:50px;
+}
+.navbar-nav li a{
+	text-transform:uppercase;
+	color:#fff !important;
+}
+.edit-option{
+	margin-left:50px;
+}
+.edit-option li{
+	list-style:none;
+	float:left;
+}
+.edit-option li a{
+	color:orange!important;
+	padding-right:10px;
+}
+
+
+.footersetion{
+  background: #133861;
+}
+.text-center{
+  padding: 10px;
+  color:#fff;
+}
+.site-me{
+  font-size: 18px;
+  font-style: italic;
+  color: #41c32b!important;
+}
+.text-center a{
+  padding-right: 10px;
+}
+textarea {
+  width: 100%!important;
+}
+.btn-primary{
+  float: right;
+}
