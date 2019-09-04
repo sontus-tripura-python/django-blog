@@ -1,13 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Sontus Tripura</title>
-</head>
+{% extends 'base.html' %}
 
-<body>
+{% block body %}
   {% for post in posts %}
       <div class="post">
 
@@ -15,9 +8,9 @@
               <p>Published: {{ post.publish_date }}</p>
           </div>
 
-          <h1><a href="#">{{ post.title }}</a></h1>
-          <p>{{ post.text|truncatechars:50|linebreaksbr }}</p>
+          <h2><a href="{% url 'post_views' pk=post.pk %}">{{ post.title }}</a></h2>
+          <p>{{ post.text|truncatechars:60|linebreaksbr }}</p>
       </div>
   {% endfor %}
-</body>
-</html>
+
+{% endblock %}
