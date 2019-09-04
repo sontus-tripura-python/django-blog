@@ -2,13 +2,13 @@
 
 
  {% block body %}
-<a href="#"><i class="fas fa-edit fa-2x" style="color: #339af0"></i></a>
-  {% if post.publish_date %}
+<a href="# "><i class="fas fa-edit fa-2x" style="color: #339af0"></i></a>
+  {% if posts.publish_date %}
          <div>
-              {{ post.publish_date }}
+              {{ posts.publish_date }}
          </div>
   {% endif%}
-  <h2>{{ post.title }}</h2>
-   <p>{{ post.text|linebreaksbr }}</p>
+  <h2>{{ posts.title }}</h2>
+   <p>{{ posts.text|linebreaksbr }}</p>
 
 {% endblock %}
