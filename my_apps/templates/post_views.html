@@ -8,7 +8,7 @@
                {{ posts.publish_date }}
           </div>
    {% endif%}
-   <a href="{% url 'post_edit' pk=post.pk %}"><i class="fas fa-edit"></i></a>
+   <a href="{% url 'post_edit' pk=posts.pk %}"><i class="fas fa-edit"></i></a>
    <h2>{{ posts.title }}</h2>
     <p>{{ posts.text|linebreaksbr }}</p>
  </div>
