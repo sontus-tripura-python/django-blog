@@ -17,12 +17,15 @@
 .edit-option{
 	margin-left:50px;
 }
+/*
 .edit-option li{
 	list-style:none;
 	float:left;
 }
-.edit-option li a{
-	color:orange!important;
+*/
+.edit-option a{
+  font-size: 40px;
+  color:orange!important;
 	padding-right:10px;
 }
 
@@ -41,9 +44,19 @@
 .text-center a{
   padding-right: 10px;
 }
-textarea {
+#id_text {
+  padding: 5px;
   width: 100%!important;
 }
 .btn-primary{
   float: right;
+}
+editLink{
+padding: 5px;
+}
+ .fa-edit{
+     color:#000 !important;
+ }
+#id_title{
+  padding: 5px;
 }

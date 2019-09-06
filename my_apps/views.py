@@ -1,6 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
 from django.utils import timezone
-
 from .forms import PostForm
 from .models import Post
 # Create your views here.
@@ -38,7 +37,7 @@ def post_edit(request, pk):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.publish_date=timezone.now()
+
             post.save()
             return redirect('post_views', pk=post.pk)
     else:
