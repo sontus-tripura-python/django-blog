@@ -24,7 +24,7 @@
 }
 */
 .edit-option a{
-  font-size: 40px;
+  font-size: 25px;
   color:orange!important;
 	padding-right:10px;
 }
@@ -51,12 +51,26 @@
 .btn-primary{
   float: right;
 }
-editLink{
+.editLink{
 padding: 5px;
 }
  .fa-edit{
+    padding: 5px;
      color:#000 !important;
  }
 #id_title{
   padding: 5px;
+}
+.date{
+  color:green;
+}
+.publishlink{
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  padding: 5px;
+  background: #000;
+}
+.publishlink:hover{
+  text-decoration: none;
 }

@@ -19,7 +19,6 @@ def post_new(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.publish_date=timezone.now()
             post.save()
             return redirect('post_views', pk=post.pk)
     else:
@@ -44,3 +43,11 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
         stuff_for_frontend = {'form': form}
     return render(request, 'post_edit.html', stuff_for_frontend)
+def post_draft(request):
+    posts = Post.objects.filter(publish_date__isnull=True).order_by('-created_date')
+    stuff_for_frontend = {'posts': posts }
+    return render(request, 'post_draft.html',  stuff_for_frontend)
+def post_publish(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.publish()
+    return redirect('post_views', pk=pk)
