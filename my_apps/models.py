@@ -15,3 +15,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+#class about(models.Model):
+    #heading = models.CharField(max_length=101)
+    #passeage = models.TextField()
+
+
+
+    #def __str__(self):
+        #return self.title
