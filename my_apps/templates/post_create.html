@@ -8,7 +8,7 @@
               <p>Published: {{ post.publish_date }}</p>
           </div>
 
-          <h2><a href="{% url 'post_views' pk=post.pk %}">{{ post.title }}</a></h2>
+          <h2><a href="{% url 'post_views' pk=post.pk %}" class="titleLink">{{ post.title }}</a></h2>
           <p>{{ post.text|truncatechars:60|linebreaksbr }}</p>
       </div>
   {% endfor %}

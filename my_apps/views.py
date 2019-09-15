@@ -4,6 +4,9 @@ from django.utils import timezone
 from .forms import PostForm
 from .models import Post
 # Create your views here.
+def about(request):
+    return render(request, 'about.html')
+
 def post_create(request):
     posts = Post.objects.filter(publish_date__lte=timezone.now()).order_by('-publish_date')
     stuff_for_frontend = {'posts': posts}
@@ -59,3 +62,8 @@ def post_publish(request, pk):
     post = get_object_or_404(Post, pk=pk)
     post.publish()
     return redirect('post_views', pk=pk)
+
+def logout(request):
+    logout(request)
+    messages.info(request, "Logged out successfully!")
+    return redirect("main:homepage")

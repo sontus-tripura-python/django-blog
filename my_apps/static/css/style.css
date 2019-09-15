@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+a:hover{
+  text-decoration: none;
+}
 .headersection{
   background: #133861;
 }
@@ -73,10 +76,18 @@ padding: 5px;
   padding: 5px;
   background: #000;
 }
-.publishlink:hover{
-  text-decoration: none;
-}
 .login_form{
   margin: 10px;
   padding: 5px;
+}
+.NewPost{
+  margin: 10px;
+  padding: 5px;
+}
+.publish_div{
+  margin: 5px;
+  padding: 5px;
+}
+.logoutsection{
+  min-height: 400px;
 }

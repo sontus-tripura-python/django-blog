@@ -4,14 +4,17 @@
 {% block body %}
 <div class="container">
   <div class="login_form">
+    <div class="tex-center">
+      <h2>Login form</h2>
+    </div>
+    <form class="post-form-blog" action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" name="button" class="btn btn-primary">LOGIN</button>
+    </form>
 
   </div>
-  <form class="post-form-blog" action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="button" name="button" class="btn btn-primary">LOGIN</button>
 
-  </form>
 </div>
 
 
