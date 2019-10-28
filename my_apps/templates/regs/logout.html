@@ -2,7 +2,10 @@
 {% block body %}
 <div class="container">
   <div class="logoutsection">
-    <a href="{% url 'login' %}" type="btn btl-outline-info">LOGIN</a>
+    <div class="backhome">
+      <a href="{% url 'post_create' %}">Back to homepage</a>
+    </div>
+    <a href="{% url 'login' %}" type="btn btn-info">LOGIN AGAIN </a>
   </div>
 </div>
 

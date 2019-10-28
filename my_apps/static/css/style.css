@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+.bodysection{
+  min-height: 500px;
+}
 a:hover{
   text-decoration: none;
 }
@@ -18,14 +21,11 @@ a:hover{
 	color:#fff !important;
 }
 .edit-option{
-	margin-left:50px;
+	margin-left:80px;
 }
-/*
-.edit-option li{
-	list-style:none;
-	float:left;
+.newpost{
+  
 }
-*/
 .edit-option a{
   font-size: 25px;
   color:orange!important;
@@ -90,4 +90,22 @@ padding: 5px;
 }
 .logoutsection{
   min-height: 400px;
+}
+.backhome{
+  background: red;
+  margin: 10px;
+  padding: 10px;
+  text-decoration: uppercase;
+}
+.post-form-blog{
+  margin: 10px;
+  padding: 10px;
+}
+.commentbtn{
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.commentsec{
+  margin: 5px;
+  padding: 5px;
 }

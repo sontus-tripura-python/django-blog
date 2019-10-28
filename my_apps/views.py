@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render,get_object_or_404,redirect
 from django.utils import timezone
-from .forms import PostForm
+from .forms import PostForm, CommentForm, Comment
 from .models import Post
 # Create your views here.
 def about(request):
@@ -67,3 +67,24 @@ def logout(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
     return redirect("main:homepage")
+
+def add_comment_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.author = request.user
+            comment.post = post
+            comment.save()
+            return redirect('post_views', pk=post.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'add_comment_post.html', {'form': form })
+
+
+def comment_remove(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.delete()
+    return redirect('post_views', pk=comment.post.pk)
+    

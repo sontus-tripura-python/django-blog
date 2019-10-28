@@ -20,6 +20,22 @@
    <h2>{{ posts.title }}</h2>
     <p>{{ posts.text|linebreaksbr }}</p>
  </div>
+<hr>
+<div class="commentbtn">
+  <a href="{% url 'add_comment_post' pk=posts.pk %}" class="btn btn-secondary">Add comment</a>
+</div>
+{% for comment in posts.comments.all %}
+<div class="commentsection">
+  <div class="commentdate">
+    {{ comment.created_date }}
+  </div>
+  <p><strong>{{ comment.author }}</strong></p>
+  <p>{{ comment.text }}</p>
+  <a href="{% url 'comment_remove' pk=comment.pk %}" class="btn btn-danger">delete</a>
+</div>
+{% empty %}
+<p>No comment yet...</p>
+{% endfor %}
 
 
 {% endblock %}
