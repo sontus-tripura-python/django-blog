@@ -67,7 +67,7 @@ def logout(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
     return redirect("main:homepage")
-
+@login_required
 def add_comment_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == 'POST':
@@ -82,12 +82,13 @@ def add_comment_post(request, pk):
         form = CommentForm()
     return render(request, 'add_comment_post.html', {'form': form })
 
-
+@login_required
 def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_views', pk=comment.post.pk)
-
+    
+@login_required
 def comment_approve(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.approve()
