@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load markdownify %}
 
  {% block body %}
  <div class="post">
@@ -18,7 +18,7 @@
    <a href="{% url 'post_edit' pk=posts.pk %}" class="editLink"><i class="fas fa-edit"></i></a>
    {% endif %}
    <h2>{{ posts.title }}</h2>
-    <p>{{ posts.text|linebreaksbr }}</p>
+    <p>{{ posts.text| markdown | safe }}</p>
  </div>
 <hr>
 <div class="commentbtn">

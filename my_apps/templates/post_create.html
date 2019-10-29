@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load markdownify %}
 {% block body %}
   {% for post in posts %}
       <div class="post">
@@ -9,7 +9,7 @@
           </div>
 
           <h2><a href="{% url 'post_views' pk=post.pk %}" class="titleLink">{{ post.title }}</a></h2>
-          <p>{{ post.text|truncatechars:60|linebreaksbr }}</p>
+          <p>{{ post.text|markdown | safe | truncatechars:60|linebreaksbr }}</p>
           <a href="{% url 'post_views' pk=post.pk %} ">Comment: {{ post.approved_comments.count }}</a>
       </div>
       <hr>
