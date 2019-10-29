@@ -63,6 +63,12 @@ def post_publish(request, pk):
     post.publish()
     return redirect('post_views', pk=pk)
 
+@login_required
+def post_delete(request, pk):
+     post = get_object_or_404(Post, pk=pk)
+     post.delete()
+     return redirect('/', pk=post.pk)
+
 def logout(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
@@ -87,7 +93,7 @@ def comment_remove(request, pk):
     comment = get_object_or_404(Comment, pk=pk)
     comment.delete()
     return redirect('post_views', pk=comment.post.pk)
-    
+
 @login_required
 def comment_approve(request, pk):
     comment = get_object_or_404(Comment, pk=pk)

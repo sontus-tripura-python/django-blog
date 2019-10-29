@@ -9,7 +9,9 @@
           </div>
 
           <h2><a href="{% url 'post_views' pk=post.pk %}" class="titleLink">{{ post.title }}</a></h2>
-          <p>{{ post.text|markdown | safe | truncatechars:60|linebreaksbr }}</p>
+          <p>{{ post.text| markdown | safe |linebreaksbr }}</p>
+
+
           <a href="{% url 'post_views' pk=post.pk %} ">Comment: {{ post.approved_comments.count }}</a>
       </div>
       <hr>
